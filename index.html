@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de tipo</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/1zgWX4V1/lupa_favicon.png" type="image/png">
+
+    <style>
+        body { background-color: aqua;
+               text-align: center; 
+               margin-top: 350px;
+               color: blue;
+               font-size: 20px;
+               font-family: Arial, Helvetica, sans-serif;}
+        .numero { color : red; }
+        .string { color : green; }
+        .boolean { color : purple; }
+    </style>  
+
+</head>
+<body>
+    <h1>Detector de tipos:</h1>
+    <input type="text" id="entrada" placeholder="Digite qualquer coisa...">
+    <button onclick="verificaTipo()">Verificar</button>
+    <p id = "conteudo"></p>
+    <p id = "resultado"></p>
+      
+    <script>
+        function verificaTipo(){
+           let valor = document.getElementById("entrada").value;
+           let conteudo = document.getElementById("conteudo");
+           let resultado = document.getElementById("resultado");
+
+           let tipo;
+           let tipoTexto;
+
+           //verificando se é booleano
+           if (valor.toLowerCase() === "true" || valor.toLowerCase() === "false"){
+                tipo = "boolean";
+                tipoTexto = "Booleano";
+                //return;
+           }
+           else if(!isNaN(Number(valor)) && valor.trim() !==""){
+                //conteudo = document.getElementById("resultado").innerText = "Tipo: número:";
+                //return;
+                if (valor.includes(".")){
+                   tipo = "numero";
+                   tipoTexto = "Número decimal";
+                }
+                else{
+                    tipo = "numero";
+                    tipoTexto = "Número inteiro";
+                }
+                
+           }
+           else if(valor.trim() === ""){
+                tipo = "string"; 
+                tipoTexto = "Vazio";
+           }
+           else{
+                tipo = "string";
+                tipoTexto = "String";
+            }
+           //document.getElementById("conteudo").innerText = "Valor digitado: "+ valor;
+           //document.getElementById("resultado").innerText = "Tipo: string";
+           conteudo.innerText = `Valor digitado: ${valor}`;
+           resultado.innerText = `Tipo: ${tipoTexto}`;        
+           resultado.className = tipo;
+        }
+        
+    </script>
+</body>
+</html>
