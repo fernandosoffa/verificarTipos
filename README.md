@@ -27,7 +27,7 @@ Projeto educacional para aprendizado.
 1. Clone ou baixe este repositório.
 
 ```bash
-git clone https://github.com/fernando.soffa/duelo-de-palavras
+git clone https://github.com/fernando.soffa/verificarTipos
 
 2. Abra o arquivo `index.html` em seu navegador.
 
