@@ -28,6 +28,7 @@ Projeto educacional para aprendizado.
 
 ```bash
 git clone https://github.com/fernando.soffa/verificarTipos
+```
 
 2. Abra o arquivo `index.html` em seu navegador.
 
